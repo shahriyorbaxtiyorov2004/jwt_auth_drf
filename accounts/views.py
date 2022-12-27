@@ -26,9 +26,11 @@ class ChangePasswordView(generics.UpdateAPIView):
 	queryset = models.Account.objects.all()
 	permission_classes = (permissions.IsAuthenticated,)
 	serializer_class = serializers.ChangePasswordSerializer
+	http_method_names = ['put', ]
 
 
 class UpdateProfileView(generics.UpdateAPIView):
 	queryset = models.Account.objects.all()
 	permission_classes = (permissions.IsAuthenticated,)
 	serializer_class = serializers.UpdateUserSerializer
+	http_method_names = ['put', ]
